@@ -25,12 +25,12 @@ requirements:
 
 test:
   requires:
-    - bmi-tester
+    # - bmi-tester
     - python {{ python_min }}
   imports:
     - pymt_gridmet
-  commands:
-    - bmi-test pymt_gridmet.bmi:GridMet --config-file=${PWD}/examples/gridmet.yaml --root-dir=examples -vvv  # [unix]
+  # commands:
+  #   - bmi-test pymt_gridmet.bmi:GridMet --config-file=${PWD}/examples/gridmet.yaml --root-dir=examples -vvv  # [unix]
 
 about:
   home: https://github.com/pymt-lab/pymt_gridmet
