@@ -25,7 +25,7 @@ requirements:
 
 test:
   requires:
-    # - bmi-tester
+    - bmi-tester
     - python {{ python_min }}
   imports:
     - pymt_gridmet
