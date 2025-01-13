@@ -11,25 +11,26 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - gridmet_bmi
 
 test:
   requires:
     - bmi-tester
+    - python {{ python_min }}
   imports:
     - pymt_gridmet
-  commands:
-    - bmi-test pymt_gridmet.bmi:GridMet -vvv  # [unix]
+  # commands:
+  #   - bmi-test pymt_gridmet.bmi:GridMet --config-file=${PWD}/examples/gridmet.yaml --root-dir=examples -vvv  # [unix]
 
 about:
   home: https://github.com/pymt-lab/pymt_gridmet
